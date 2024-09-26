@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import kodlamaio.javahrms.business.abstracts.EmployeeService;
+import kodlamaio.javahrms.core.utilities.results.DataResult;
 import kodlamaio.javahrms.entities.concretes.Employee;
 
 @RestController
@@ -20,7 +21,7 @@ public class EmployeesController {
 	}
 	
 	@GetMapping("/getall")
-	public List<Employee> getAll(){
+	public DataResult<List<Employee>> getAll(){
 		return this.employeeService.getAll();
 	}
 	
